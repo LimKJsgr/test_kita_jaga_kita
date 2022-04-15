@@ -8,6 +8,7 @@ import 'package:test_kita_jaga_kita/widgets/bottomNavBar.dart';
 
 import 'package:test_kita_jaga_kita/search/search_donation.dart';
 import 'package:test_kita_jaga_kita/widgets/donation_widget.dart';
+import 'package:test_kita_jaga_kita/widgets/drawer_widget.dart';
 
 class DonationScreen extends StatefulWidget {
   const DonationScreen({Key? key}) : super(key: key);
@@ -41,13 +42,11 @@ class _DonationScreenState extends State<DonationScreen> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
         bottomNavigationBar: BottomNavigationBarForApp(indexNum: 0,),
+        drawer: CustomDrawer(),
         appBar: AppBar(
-          automaticallyImplyLeading: false,
+          automaticallyImplyLeading: true,
           backgroundColor: Colors.white,
-          leading: IconButton(
-            icon: Icon(Icons.filter_list_outlined, color: Colors.grey),
-            onPressed: (){},
-          ),
+          iconTheme: IconThemeData(color: Colors.black),
           actions: [
             IconButton(
               icon: Icon(Icons.search_outlined, color: Colors.grey),
@@ -57,6 +56,9 @@ class _DonationScreenState extends State<DonationScreen> {
             )
           ],
         ),
+
+
+
         body: StreamBuilder<QuerySnapshot<Map<String, dynamic>>>(
             stream: FirebaseFirestore.instance
                 .collection('donations')

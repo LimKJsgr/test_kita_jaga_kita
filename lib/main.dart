@@ -2,6 +2,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:test_kita_jaga_kita/user_state.dart';
+import 'package:test_kita_jaga_kita/more/about_us.dart';
 
 void main() {
 
@@ -49,8 +50,6 @@ class MyApp extends StatelessWidget {
             );
           }
 
-
-
           return MaterialApp(
             debugShowCheckedModeBanner: false,
             title: 'Kita Jaga Kita',
@@ -59,6 +58,10 @@ class MyApp extends StatelessWidget {
               primarySwatch: Colors.blue,
             ),
             home: UserState(),
+            routes: {
+              '/about_us':(context) => AboutUsPage(),
+              //'/eleos_wallet':(context) => AboutUsPage(),
+            },
           );
         });
   }

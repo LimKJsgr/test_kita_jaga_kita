@@ -108,6 +108,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin{
           'phoneNumber': _phoneNumberController.text,
           'location': _locationController.text,
           'createdAt': Timestamp.now(),
+          'walletBalance': 0,
         });
         Navigator.canPop(context) ? Navigator.pop(context) : null;
       } catch(error){
@@ -488,7 +489,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin{
   }
 
   void _getFromGallery() async {
-    PickedFile? pickedFile = await ImagePicker().getImage(
+    XFile? pickedFile = await ImagePicker().pickImage(
       source: ImageSource.gallery,
       maxHeight: 1080,
       maxWidth: 1080,
@@ -499,7 +500,7 @@ class _SignUpState extends State<SignUp> with TickerProviderStateMixin{
 
 
   void _getFromCamera() async {
-    PickedFile? pickedFile = await ImagePicker().getImage(
+    XFile? pickedFile = await ImagePicker().pickImage(
       source: ImageSource.camera,
       maxHeight: 1080,
       maxWidth: 1080,
