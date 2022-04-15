@@ -1,6 +1,6 @@
 # kita_jaga_kita
 
-This project is created for UCCS3223 Mobile Application Development assignment purposes.
+This project is created for UCCD3223 Mobile Application Development assignment purposes.
 
 ## Our Members
 
