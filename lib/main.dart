@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
+import 'package:test_kita_jaga_kita/more/eleos_wallet.dart';
 import 'package:test_kita_jaga_kita/user_state.dart';
 import 'package:test_kita_jaga_kita/more/about_us.dart';
 
@@ -60,7 +61,7 @@ class MyApp extends StatelessWidget {
             home: UserState(),
             routes: {
               '/about_us':(context) => AboutUsPage(),
-              //'/eleos_wallet':(context) => AboutUsPage(),
+              '/eleos_wallet':(context) => EleosWallet(),
             },
           );
         });

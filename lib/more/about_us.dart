@@ -13,7 +13,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         extendBodyBehindAppBar: true,
-        backgroundColor: Color(0xFFC6BBDC),
+        backgroundColor: Colors.black45,
         //drawer: CustomDrawer(),
         appBar: AppBar(
           title: Text("About Us"),
@@ -98,7 +98,7 @@ class _AboutUsPageState extends State<AboutUsPage> {
                                 child: Text(
                                     "We are messengers sent by Eleos, the God of Athens. The aim of development of this application is to rescue all organisms with our prominent exersions.",
                                     textAlign: TextAlign.center,
-                                    style: TextStyle(color: Colors.black, fontSize: 25.0)),
+                                    style: TextStyle(color: Colors.white, fontSize: 25.0)),
                               ),
                             ]),
                           ))),

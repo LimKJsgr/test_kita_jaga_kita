@@ -41,6 +41,7 @@ class _DonationScreenState extends State<DonationScreen> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      extendBody: true,
         bottomNavigationBar: BottomNavigationBarForApp(indexNum: 0,),
         drawer: CustomDrawer(),
         appBar: AppBar(

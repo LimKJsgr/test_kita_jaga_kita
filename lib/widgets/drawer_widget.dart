@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -10,14 +11,14 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-        backgroundColor: Color(0xf9ede1f7),
+        backgroundColor: CupertinoColors.black,
         child: ListView(
             children: [
               Container(
                 height: 70,
                 child: const DrawerHeader(
                   decoration: BoxDecoration(
-                    color: Color(0xff755192),
+                    color: Colors.white,
                   ),
                   child: Center(
                     child: Text(
@@ -25,7 +26,7 @@ class CustomDrawer extends StatelessWidget {
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 20,
-                        color: Colors.white,
+                        color: Colors.black,
                       ),
                     ),
                   ),
@@ -33,29 +34,39 @@ class CustomDrawer extends StatelessWidget {
               ),
               Column(
                   children: [
-                    buildMenuItem(
-                      context,
-                      text: 'About Us',
-                      icon: FontAwesomeIcons.users,
-                      //tileColor: ModalRoute.of(context)?.settings.name == '/about_us' ? Colors.deepPurple : null,
-                      //textIconColor: ModalRoute.of(context)?.settings.name == '/about_us' ? Colors.white : null,
-                      onTap: () {
-                        Navigator.of(context).pop();
-                        Navigator.pushNamed(context, '/about_us');
-                        //print(ModalRoute.of(context)?.settings.name);
-                      },
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 10),
+                      child: buildMenuItem(
+                        context,
+                        text: 'About Us',
+                        icon: FontAwesomeIcons.users,
+                        textIconColor: Colors.white,
+                        tileColor: Colors.grey[900],
+                        //tileColor: ModalRoute.of(context)?.settings.name == '/about_us' ? Colors.deepPurple : null,
+                        //textIconColor: ModalRoute.of(context)?.settings.name == '/about_us' ? Colors.white : null,
+                        onTap: () {
+                          Navigator.of(context).pop();
+                          Navigator.pushNamed(context, '/about_us');
+                          //print(ModalRoute.of(context)?.settings.name);
+                        },
+                      ),
                     ),
-                    buildMenuItem(
-                      context,
-                      text: 'Eleos Wallet',
-                      icon: FontAwesomeIcons.users,
-                      //tileColor: ModalRoute.of(context)?.settings.name == '/about_us' ? Colors.deepPurple : null,
-                      //textIconColor: ModalRoute.of(context)?.settings.name == '/about_us' ? Colors.white : null,
-                      onTap: () {
-                        Navigator.of(context).pop();
-                        Navigator.pushNamed(context, '/eleos_wallet');
-                        //print(ModalRoute.of(context)?.settings.name);
-                      },
+                    Padding(
+                      padding: EdgeInsets.fromLTRB(10, 10, 10, 0),
+                      child: buildMenuItem(
+                        context,
+                        text: 'Eleos Wallet',
+                        icon: FontAwesomeIcons.users,
+                        textIconColor: Colors.white,
+                        tileColor: Colors.grey[900],
+                        //tileColor: ModalRoute.of(context)?.settings.name == '/about_us' ? Colors.deepPurple : null,
+                        //textIconColor: ModalRoute.of(context)?.settings.name == '/about_us' ? Colors.white : null,
+                        onTap: () {
+                          Navigator.of(context).pop();
+                          Navigator.pushNamed(context, '/eleos_wallet');
+                          //print(ModalRoute.of(context)?.settings.name);
+                        },
+                      ),
                     ),
                   ]
               )
